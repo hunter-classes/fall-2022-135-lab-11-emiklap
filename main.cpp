@@ -1,7 +1,10 @@
 #include <iostream>
+#include <string>
 #include "profile.h"
+#include "network.h"
 
 int main() {
+    std::cout << "------------PART A------------\n" << std::endl;
     Profile p1("marco", "Marco");
     std::cout << p1.getUsername() << std::endl; // marco
     std::cout << p1.getFullName() << std::endl; // Marco (@marco)
@@ -13,4 +16,15 @@ int main() {
     Profile p2("tarma1", "Tarma Roving");
     std::cout << p2.getUsername() << std::endl; // tarma1
     std::cout << p2.getFullName() << std::endl; // Tarma Roving (@tarma1)
+
+    std::cout << "\n------------PART B------------\n" << std::endl;
+    Network nw;
+    std::cout << "nw.addUser('mario', 'Mario'): " << nw.addUser("mario", "Mario") << std::endl;     // true (1)
+    std::cout << "nw.addUser('luigi', 'Luigi'): " << nw.addUser("luigi", "Luigi") << std::endl;     // true (1)
+
+    std::cout << "nw.addUser('mario', 'Mario2'): " << nw.addUser("mario", "Mario2") << std::endl;    // false (0)
+    std::cout << "nw.addUser('mario 2', 'Mario2'): " << nw.addUser("mario 2", "Mario2") << std::endl;  // false (0)
+    std::cout << "nw.addUser('mario-2', 'Mario2'): " << nw.addUser("mario-2", "Mario2") << std::endl;  // false (0)
+
+    return 0;
 }
