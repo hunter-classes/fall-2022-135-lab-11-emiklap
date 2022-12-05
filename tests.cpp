@@ -33,5 +33,20 @@ TEST_CASE("Task B: Network") {
     for(int i = 2; i < 20; i++) {
         nw.addUser("mario" + std::__cxx11::to_string(i), "Mario" + std::__cxx11::to_string(i));
     }
-    CHECK(nw.addUser("mario200000", "Mario") == 0);
+    CHECK(nw.addUser("mario200000", "Mario") == 0); //it will not add a new user if the following array is full
+}
+
+TEST_CASE("Task C: Network - follow()") {
+    Network nw;
+    nw.addUser("mario", "Mario");
+    nw.addUser("luigi", "Luigi");
+    nw.addUser("yoshi", "Yoshi");
+    nw.addUser("wario", "Wario");
+
+    CHECK(nw.follow("mario", "luigi") == true);
+    CHECK(nw.follow("mario", "yoshi") == true);
+    CHECK(nw.follow("luigi", "mario") == true);
+    CHECK(nw.follow("luigi", "yoshi") == true);
+    CHECK(nw.follow("peach", "mario") == false);
+    CHECK(nw.follow("yoshi", "daisy") == false);
 }
