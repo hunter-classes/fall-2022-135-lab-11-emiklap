@@ -7,7 +7,7 @@
 * GitHub username: emiklap
 
 * Notes:
-For task B I did not include "–std=c++11" but my code still compiles so I left it as is. Not sure exactly what I should have done in this case.
+For task B and C I did not include "–std=c++11" but my code still compiles so I left it as is. Not sure exactly what I should have done in this case.
 
   
 * General instructions:
